@@ -248,7 +248,7 @@ export default function Home() {
                   description="A non-profit organization which facilitate both blood donors and receivers."
                   link="https://blood-linkk.vercel.app/"
                   image={blood_link_shot}
-                  hoverDuration="3s"
+                // hoverDuration="3s"
                 />
               </div>
             </div>
