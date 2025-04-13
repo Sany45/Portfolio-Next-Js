@@ -19,6 +19,7 @@ import { ProjectCard } from "@/components/ProjectCard"
 import restaurant_shot from '@/public/restaurant_shot.jpg'
 import naya_canvas_shot from '@/public/naya_canvas_shot.jpg'
 import sleek_lifestyle_shot from '@/public/sleek_lifestyle_shot.jpg'
+import blood_link_shot from '@/public/blood_linkk_shot.jpg'
 import reactangle_image from '@/public/rectangle.png'
 
 export default function Home() {
@@ -241,6 +242,13 @@ export default function Home() {
                   link="https://naya-canvas.netlify.app/"
                   image={naya_canvas_shot}
                   hoverDuration="6s"
+                />
+                <ProjectCard
+                  title="Blood Link"
+                  description="A non-profit organization which facilitate both blood donors and receivers."
+                  link="https://blood-linkk.vercel.app/"
+                  image={blood_link_shot}
+                  hoverDuration="3s"
                 />
               </div>
             </div>
