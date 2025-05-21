@@ -24,7 +24,7 @@ import { ContactForm } from "@/components/ContactForm"
 
 export default function Home() {
   const [typeText, setTypeText] = useState("Freelancer")
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
 
   useEffect(() => {
     const texts = ["Freelancer", "React Developer", "Next.js Expert", "SEO Specialist"]
@@ -41,6 +41,9 @@ export default function Home() {
 
   useEffect(() => {
     console.log(document.documentElement.classList)
+     if (typeof (window) == 'undefined') {
+      return
+    }
     if (darkMode) {
       document.documentElement.classList.add("dark")
     } else {
