@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AnimatedCursor from "@/components/AnimatedCursor";
 import CustomCursor from "@/components/CustomCursor";
+import ClientLayout from "./ClientLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,10 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nahid | MERN & Next.js Developer",
-  description: "Hi, I'm Nahid, a passionate MERN & Next.js developer specializing in full-stack web development.",
+  title: "Shahriar | MERN & Next.js Developer",
+  description: "Hi, I'm Shahriar, a passionate MERN & Next.js developer specializing in full-stack web development.",
   keywords: [
-    "Nahid",
+    "Shahriar",
     "MERN stack developer",
     "Next.js developer",
     "full-stack developer",
@@ -29,24 +30,24 @@ export const metadata: Metadata = {
     "JavaScript",
     "web development",
   ],
-  authors: [{ name: "Nahid", url: "https://nahiddev.vercel.app" }],
-  creator: "Nahid",
+  authors: [{ name: "Shahriar", url: "https://www.shahriarsany.shop/" }],
+  creator: "Shahriar",
   openGraph: {
-    title: "Nahid | MERN & Next.js Developer",
-    description: "Hi, I'm Nahid, a MERN & Next.js developer with expertise in full-stack web development.",
-    url: "https://nahiddev.vercel.app",
-    siteName: "Nahid's Portfolio",
+    title: "Shahriar | MERN & Next.js Developer",
+    description: "Hi, I'm Shahriar, a MERN & Next.js developer with expertise in full-stack web development.",
+    url: "https://www.shahriarsany.shop/",
+    siteName: "Shahriar's Portfolio",
     type: "website",
     images: [
       {
-        url: "https://nahiddev.vercel.app/profile_pic.png",
+        url: "https://www.shahriarsany.shop//shahriar.jpg",
         width: 1200,
         height: 630,
-        alt: "Nahid Portfolio",
+        alt: "Shahriar Portfolio",
       },
     ],
   },
-  metadataBase: new URL("https://nahiddev.vercel.app"),
+  metadataBase: new URL("https://www.shahriarsany.shop/"),
 };
 
 export default function RootLayout({
@@ -59,9 +60,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        {children}
-        {/* <AnimatedCursor /> */}
-        <CustomCursor />
+        <ClientLayout>
+          {children}
+          {/* <AnimatedCursor /> */}
+          <CustomCursor />
+        </ClientLayout>
       </body>
     </html>
   );
