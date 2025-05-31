@@ -57,6 +57,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Facebook Domain Verification */}
+        <meta name="facebook-domain-verification" content="8c24ptwr6d5teqt7qzorrrjuxw3vau" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >

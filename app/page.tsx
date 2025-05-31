@@ -21,10 +21,10 @@ import sleek_lifestyle_shot from "@/public/sleek_lifestyle_shot.jpg"
 import blood_link_shot from "@/public/blood_linkk_shot.jpg"
 import reactangle_image from "@/public/rectangle.png"
 import { ContactForm } from "@/components/ContactForm"
+import Navbar from "@/components/Navbar"
 
 export default function Home() {
   const [typeText, setTypeText] = useState("Freelancer")
-  const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
     const texts = ["Freelancer", "React Developer", "Next.js Expert", "SEO Specialist"]
@@ -39,54 +39,13 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
-  useEffect(() => {
-    console.log(document.documentElement.classList)
-    if (darkMode) {
-      document.documentElement.classList.add("dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-    }
-  }, [darkMode])
-
-  const toggleDarkMode = () => setDarkMode(!darkMode)
 
   return (
-    <div className={`min-h-screen ${darkMode ? "dark" : ""}`}>
+    <div className={`min-h-screen`}>
       <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
           {/* Navbar */}
-          <nav className="bg-white dark:bg-gray-800 shadow-md p-4 sticky top-0 z-10 transition-colors duration-300">
-            <div className="container mx-auto flex justify-end sm:justify-between items-center">
-              <h1 className=" hidden sm:block text-2xl font-bold text-blue-600 dark:text-blue-400">Shahriar Sany</h1>
-              <div className="space-x-4 flex items-center">
-                <Link
-                  href="#about"
-                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-                >
-                  About
-                </Link>
-                <Link
-                  href="#projects"
-                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-                >
-                  Projects
-                </Link>
-                <Link
-                  href="#contact"
-                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-                >
-                  Contact
-                </Link>
-                <button
-                  onClick={toggleDarkMode}
-                  className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
-                >
-                  {darkMode ? <FiSun className="text-yellow-400" /> : <FiMoon className="text-gray-600" />}
-                </button>
-              </div>
-            </div>
-          </nav>
-
+          <Navbar />
           {/* Hero Section */}
           <section className=" md:px-5 lg:px-24 py-8 sm:py-20 bg-gray-200 dark:bg-gray-800 transition-colors duration-300">
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
