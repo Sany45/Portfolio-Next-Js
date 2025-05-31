@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { BiMenu } from 'react-icons/bi'
 import { FiMoon, FiSun } from 'react-icons/fi'
+import { MdRestaurantMenu } from 'react-icons/md'
 
 const Navbar = () => {
 
@@ -25,10 +26,10 @@ const Navbar = () => {
 
   const toggleDarkMode = () => setDarkMode(!darkMode)
   return (
-    <nav className="bg-white relative dark:bg-black shadow-md p-4 md:sticky top-0 z-20 transition-colors duration-300">
+    <nav className="bg-white relative dark:bg-gray-900 shadow-md p-4 md:sticky top-0 z-20 transition-colors duration-300">
       <div className="container md:flex mx-auto hidden justify-end sm:justify-between items-center">
         {/* <h1 className=" hidden sm:block text-2xl font-bold text-blue-600 dark:text-blue-400">Shahriar Sany</h1> */}
-        <h1 className=" hidden sm:block text-2xl font-bold text-blue-600 dark:text-blue-400">{"{A}"}</h1>
+        <h1 className=" hidden sm:block text-2xl font-bold text-gray-600 dark:text-white">{"{S}"}</h1>
         <div className="space-x-4 flex items-center">
           <Link
             href="#about"
@@ -58,12 +59,16 @@ const Navbar = () => {
       </div>
       <div className="container md:hidden mx-auto flex justify-between sm:justify-between items-center">
         {/* <h1 className=" hidden sm:block text-2xl font-bold text-blue-600 dark:text-blue-400">Shahriar Sany</h1> */}
-        <h1 className=" text-2xl font-bold text-gray-600 dark:text-white">{"{A}"}</h1>
+        <h1 className=" text-2xl font-bold text-gray-600 dark:text-white">{"{S}"}</h1>
         <div>
-          <BiMenu onClick={toggleMenu} size={30} />
+          {
+            showMenu ?
+              <MdRestaurantMenu onClick={toggleMenu} size={30} /> :
+              <BiMenu onClick={toggleMenu} size={30} />
+          }
         </div>
-        <div className={`space-x-4 flex items-center absolute left-0 w-full p-4 border-y mb-2 border-gray-400 dark:bg-black bg-white z-10 transition-all
-          ${showMenu ? 'bottom-0 translate-y-full' : 'top-0 -translate-y-full'}
+        <div className={`space-x-4 flex items-center absolute left-0 w-full  border-y border-gray-400 dark:bg-gray-900 bg-white z-10 transition-all overflow-hidden bottom-0 translate-y-full 
+          ${showMenu ? 'p-4' : 'py-0 h-0 border-0'}
           `}>
           <Link
             href="#about"
