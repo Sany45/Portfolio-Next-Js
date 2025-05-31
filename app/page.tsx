@@ -26,6 +26,8 @@ import Navbar from "@/components/Navbar"
 export default function Home() {
   const [typeText, setTypeText] = useState("Freelancer")
 
+  const [darkMode, setDarkMode] = useState(true)
+
   useEffect(() => {
     const texts = ["Freelancer", "React Developer", "Next.js Expert", "SEO Specialist"]
     // const texts = ["Freelancer", "React Developer"]
@@ -39,6 +41,19 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
+  useEffect(() => {
+    console.log(document.documentElement.classList)
+    if (typeof (window) == 'undefined') {
+      return
+    }
+    if (darkMode) {
+      document.documentElement.classList.add("dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+    }
+  }, [darkMode])
+
+  const toggleDarkMode = () => setDarkMode(!darkMode)
 
   return (
     <div className={`min-h-screen`}>
