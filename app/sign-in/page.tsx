@@ -28,6 +28,11 @@ export default function Login() {
     setLoading(true)
     setError("")
 
+    if (email !== 'shahriarsany57@gmail.com') {
+      setLoading(false)
+      return alert('Wrong Email Address')
+    }
+
     const result = await signIn(email, password)
 
     if (result.success) {

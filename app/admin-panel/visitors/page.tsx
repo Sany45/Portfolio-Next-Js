@@ -34,7 +34,7 @@ export default function VisitorsPage() {
   const fetchVisitors = async () => {
     try {
       setLoading(true)
-      const visitorsQuery = query(collection(db, "visitors"), orderBy("timestamp", "desc"))
+      const visitorsQuery = query(collection(db, "portfolio", "shahriar", "visitors"), orderBy("timestamp", "desc"))
       const querySnapshot = await getDocs(visitorsQuery)
 
       const visitorsData = querySnapshot.docs.map((doc) => ({
@@ -54,7 +54,7 @@ export default function VisitorsPage() {
   const handleDeleteVisitor = async (id: any) => {
     if (confirm("Are you sure you want to delete this visitor record?")) {
       try {
-        await deleteDoc(doc(db, "visitors", id))
+        await deleteDoc(doc(db, "portfolio", "shahriar", "visitors", id))
         setVisitors(visitors.filter((visitor: any) => visitor.id !== id))
       } catch (error) {
         console.error("Error deleting visitor record:", error)

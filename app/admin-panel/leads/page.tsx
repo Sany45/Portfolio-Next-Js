@@ -33,7 +33,7 @@ export default function LeadsPage() {
   const fetchLeads = async () => {
     try {
       setLoading(true)
-      const leadsQuery = query(collection(db, "contacts"), orderBy("createdAt", "desc"))
+      const leadsQuery = query(collection(db, "portfolio", "shahriar", "contacts"), orderBy("createdAt", "desc"))
       const querySnapshot = await getDocs(leadsQuery)
 
       const leadsData = querySnapshot.docs.map((doc) => ({
@@ -53,7 +53,7 @@ export default function LeadsPage() {
   const handleDeleteLead = async (id: string) => {
     if (confirm("Are you sure you want to delete this lead?")) {
       try {
-        await deleteDoc(doc(db, "contacts", id))
+        await deleteDoc(doc(db, "portfolio", "shahriar", "contacts", id))
         setLeads(leads.filter((lead: { id: string }) => lead.id !== id))
       } catch (error) {
         console.error("Error deleting lead:", error)

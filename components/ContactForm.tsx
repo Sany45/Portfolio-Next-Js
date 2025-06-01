@@ -59,7 +59,7 @@ export function ContactForm() {
       setIsSubmitting(true)
 
       // Add document to Firestore
-      await addDoc(collection(db, "contacts"), {
+      await addDoc(collection(db, "portfolio", "shahriar", "contacts"), {
         ...formData,
         createdAt: serverTimestamp(),
       })
@@ -75,7 +75,6 @@ export function ContactForm() {
 
       showNotification("success", "Thank you for reaching out. I'll get back to you soon.")
     } catch (error) {
-      console.error("Error submitting form:", error)
       showNotification("error", "Your message couldn't be sent. Please try again later.")
     } finally {
       setIsSubmitting(false)
