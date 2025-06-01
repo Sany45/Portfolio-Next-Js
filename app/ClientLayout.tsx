@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation"
 import { db } from "@/lib/firebase"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import "./globals.css"
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 
 export default function ClientLayout({
   children,
@@ -42,14 +44,24 @@ export default function ClientLayout({
 
       trackVisitor()
     }
+
   }, [pathname])
 
+  if (!pathname.includes('admin-panel')) {
+    return (
+      <>
+        <Navbar />
+        {children}
+        <Footer />
+      </>
+    )
+  }
+
   return (
-    // <html lang="en">
-    // <body>{children}</body>
-    // </html>
     <>
       {children}
     </>
   )
+
+
 }

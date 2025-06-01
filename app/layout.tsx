@@ -4,6 +4,8 @@ import "./globals.css";
 import AnimatedCursor from "@/components/AnimatedCursor";
 import CustomCursor from "@/components/CustomCursor";
 import ClientLayout from "./ClientLayout";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

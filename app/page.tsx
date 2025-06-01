@@ -22,6 +22,7 @@ import blood_link_shot from "@/public/blood_linkk_shot.jpg"
 import reactangle_image from "@/public/rectangle.png"
 import { ContactForm } from "@/components/ContactForm"
 import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 
 export default function Home() {
   const [typeText, setTypeText] = useState("Freelancer")
@@ -60,7 +61,7 @@ export default function Home() {
       <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
           {/* Navbar */}
-          <Navbar />
+          {/* <Navbar /> */}
           {/* Hero Section */}
           <section className=" md:px-5 lg:px-24 py-8 sm:py-20 bg-gray-200 dark:bg-gray-800 transition-colors duration-300">
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
@@ -301,12 +302,7 @@ export default function Home() {
           </section>
 
           {/* Footer */}
-          <footer className="bg-gray-800 dark:bg-gray-900 text-white py-8 transition-colors duration-300">
-            <div className="container mx-auto text-center">
-              <p>&copy; {new Date().getFullYear()} Shahriar Sany. All rights reserved.</p>
-              <p className="mt-2 text-sm text-gray-400">Crafted with passion and powered by Next.js</p>
-            </div>
-          </footer>
+          <Footer />
         </motion.div>
       </div>
     </div>
